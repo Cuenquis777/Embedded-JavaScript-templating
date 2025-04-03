@@ -1,0 +1,25 @@
+{
+    "examen": [
+        {
+            "productos": 1
+        },
+        {
+            "id": 999,
+            "nom": "Mesa",
+            "preu": 1234567,
+            "categoria": "Componentes"
+        },
+        {
+            "id": 999,
+            "nom": "Ordenador",
+            "preu": 1200,
+            "categoria": "Electronica"
+        },
+        {
+            "id": 999,
+            "nom": "Ordenador",
+            "preu": 1200,
+            "categoria": "Electronica"
+        }
+    ]
+}

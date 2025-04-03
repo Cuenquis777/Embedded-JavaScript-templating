@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "nombre": "Elemento 4",
+      "precio": 10,
+      "categoria": "Categoria 1"
+    },
+    {
+      "id": 2,
+      "nombre": "Elemento 2",
+      "precio": 20,
+      "categoria": "Categoria 2"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": 111,
+      "nombre": "Armario",
+      "precio": "1043€",
+      "categoria": "Categoria 1423"
+    },
+    {
+      "id": 222,
+      "nombre": "Cajon",
+      "precio": "85€",
+      "categoria": "Categoria 2"
+    }
+  ]
+}

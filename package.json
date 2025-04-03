@@ -1,0 +1,22 @@
+{
+  "name": "marc-cuenca-mata",
+  "version": "2.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "MarcCuenca",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "description": ""
+}

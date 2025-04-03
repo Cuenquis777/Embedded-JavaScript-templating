@@ -1,0 +1,32 @@
+###
+GET http://localhost:3002/db
+
+###
+
+GET http://localhost:3002/db/1
+###
+
+POST http://localhost:3002/db HTTP/1.1
+Content-Type: application/json
+
+{
+
+            "id": 1,
+            "nombre": "producte 1",
+            "precio": 10,
+            "categoria": "aliment"}
+###
+
+PUT http://localhost:3002/db/1 HTTP/1.1
+Content-Type: application/json
+
+{
+
+ "id": 1,
+            "nombre": "producte 1",
+            "precio": 10,
+            "categoria": "aliment"
+}
+###
+
+DELETE http://localhost:3002/db/1 HTTP/1.1

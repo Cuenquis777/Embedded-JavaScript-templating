@@ -1,0 +1,35 @@
+GET http://localhost:5000/examen
+
+###
+
+GET http://localhost:5000/examen/999
+
+###
+
+POST http://localhost:5000/examen HTTP/1.1
+Content-Type: application/json
+
+{
+ "id": 999,
+ "nom": "Ordenador",
+ "preu": 1200,
+ "categoria" :"Electronica"
+}
+
+###
+PUT http://localhost:5000/examen/999 HTTP/1.1
+Content-Type: application/json
+
+{
+ "id": 999,
+ "nom": "Mesa",
+ "preu": 1234567,
+ "categoria" :"Componentes"
+}
+
+###
+DELETE http://localhost:5000/examen/1 HTTP/1.1
+
+{
+    "nom" : "Mesa"
+}

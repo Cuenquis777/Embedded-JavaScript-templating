@@ -1,0 +1,20 @@
+{
+  "name": "examen",
+  "version": "1.0.0",
+  "main": "serverMarcCuenca.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon serverMarcCuenca.js"
+  },
+  "author": "Marc",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "description": ""
+}
