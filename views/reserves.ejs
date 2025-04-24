@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvingut</title>
+    <link rel="stylesheet" type= "text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gestió de reserves per <%= user.name %>!</h1>
+        <h2><%- htmlMessage %></h2>
+    </header>
+    <main>
+        <section>
+            <h2>Llista de Reserves</h2>
+            <ul class="reserva-list">
+                <% data.reserves.forEach(reserva => { %>
+                    <li class="product-item">
+                        <strong><%= reserva.estat %></strong>
+                        <span><%= reserva.data %></span>
+                        <span> <a href="/reserves/<%=reserva.id%>">Detall de recurso</a></span>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "usuaris": [
+        {
+            "id": 1,
+            "email": "sfdsafbbx@gmail.com",
+            "tipo": "cliente",
+            "es_administrador": false,
+            "contraseña": 123456
+        },
+        {
+            "id": 2,
+            "email": "admin@example.com",
+            "tipo": "administrador",
+            "es_administrador": true,
+            "contraseña": 123456
+        }
+    ]
+}

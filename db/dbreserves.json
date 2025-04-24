@@ -1,0 +1,26 @@
+{
+  "reserves": [
+      {
+          "id" : 1,
+          "estat" : "Activa",
+          "hora_inici": "2025-02-20T09:30:00Z",
+          "hora_final": "2025-02-20T11:30:00Z",
+          "data": "2025-02-20"
+
+      },
+      {
+          "id" : 2,
+          "estat" : "Completada",
+          "hora_inici": "2025-02-21T14:00:00Z",
+          "hora_final": "2025-02-21T16:00:00Z",
+          "data": "2025-02-21"
+      },
+      {
+          "id" : 3,
+          "estat" : "Cancelada",
+          "hora_inici": "2025-02-22T18:45:00Z",
+          "hora_final": "2025-02-22T20:15:00Z",
+          "data": "2025-02-22"
+      }
+  ]
+}

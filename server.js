@@ -1,8 +1,10 @@
 import bodyParser from "body-parser";
 import express from "express";
 import fs from "fs";
-import productRoutes from './routes/products.js'
-import bookRoutes from './routes/books.js'
+import usuarisRoutes from './routes/usuaris.js'
+import recursosRoutes from './routes/recursos.js'
+import reservesRoutes from './routes/reserves.js'
+import notificacionsRoutes from '/routes/notificacions.js'
 
 
 const app = express();
@@ -16,11 +18,14 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
-app.use('/products',productRoutes);
-app.use('/books',bookRoutes);
+// Llamamos a las rutas 
+app.use('/usuaris',usuarisRoutes);
+app.use('/recursos',recursosRoutes);
+app.use('/reserves',reservesRoutes);
+app.user('/notificacions, ' ,notificacionsRoutes)
 
 
 // Iniciar el servidor en el puerto 3002
 app.listen(3002, () => {
-    console.log("Server listening on port 3000");
+    console.log("Server listening on port 3002");
 });
