@@ -1,0 +1,15 @@
+{
+    "notificacio" : [
+        {
+            "id": 1,
+            "user_id" : 1,
+            "id_reserva" : 13
+        },
+        {
+            "id": 4,
+            "user_id" : 44,
+            "id_reserva" : 42
+        }
+       
+    ]
+}

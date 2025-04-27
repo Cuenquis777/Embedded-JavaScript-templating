@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benvingut</title>
-    <link rel="stylesheet" type= "text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>Gestió de Notificacions per <%= user.name %>!</h1>
+        <h1>Gestió de notificacions per <%= user.name %>!</h1>
         <h2><%- htmlMessage %></h2>
     </header>
     <main>
         <section>
             <h2>Llista de Notificacions</h2>
-            <ul class="Notificacions-list">
-                <% data.notificacions.forEach(notificacio => { %>
+            <ul class="recurso-list">
+                <% notificacions.forEach(noti => { %>
                     <li class="product-item">
-                        <strong><%= notificacio.id %></strong>
-                        <span><%= notificacio.user_id %></span>
-                        <span> <a href="/notificacions/<%=notificacio.id%>">Detall de recurso</a></span>
+                        <strong>ID: <%= noti.id %></strong>                       
+                        <span> <a href="/notificacions/<%= noti.id %>">Detall de notificació</a></span>
+                        <span> <a href="/notificacions/<%= noti.id %>/edit" class="btn-edit">Editar Notificació</a></span>
                     </li>
                 <% }) %>
             </ul>

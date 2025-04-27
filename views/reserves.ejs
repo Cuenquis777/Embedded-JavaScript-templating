@@ -19,9 +19,10 @@
             <ul class="reserva-list">
                 <% data.reserves.forEach(reserva => { %>
                     <li class="product-item">
-                        <strong><%= reserva.estat %></strong>
-                        <span><%= reserva.data %></span>
+                        <strong>Estado: <%= reserva.estat %></strong>
+                        <span>Reserva data: <%= reserva.data %></span>
                         <span> <a href="/reserves/<%=reserva.id%>">Detall de recurso</a></span>
+                        <span> <a href="/reserves/<%= reserva.id %>/edit" class="btn-edit">Editar Reserva</a></span>
                     </li>
                 <% }) %>
             </ul>

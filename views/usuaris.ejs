@@ -15,15 +15,15 @@
     </header>
     <main>
         <section>
-            <h2>Llista de Llibres</h2>
+            <h2>Llista de Usuaris</h2>
             <ul class="usuari-list">
                 <% data.usuaris.forEach(usuari => { %>
                     <li class="product-item">
                         <strong>Email: <%= usuari.email %></strong>
+                        <span>Nom: <%= usuari.nombre %></span>
                         <span>Tipo : <%= usuari.tipo %></span>
                         <span> <a href="/usuaris/<%=usuari.id%>">Detall de Usuari</a></span>
-                        <span> <a href="/usuaris/<%=usuari.id%>">Editar Usuari</a></span>
-
+                        <span> <a href="/usuaris/<%= usuari.id %>/edit">Editar Usuari</a></span>
                     </li>
                 <% }) %>
             </ul>

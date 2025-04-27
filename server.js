@@ -4,7 +4,7 @@ import fs from "fs";
 import usuarisRoutes from './routes/usuaris.js'
 import recursosRoutes from './routes/recursos.js'
 import reservesRoutes from './routes/reserves.js'
-import notificacionsRoutes from '/routes/notificacions.js'
+import notificacionsRoutes from './routes/notificacions.js'
 
 
 const app = express();
@@ -22,7 +22,8 @@ app.get("/", (req, res) => {
 app.use('/usuaris',usuarisRoutes);
 app.use('/recursos',recursosRoutes);
 app.use('/reserves',reservesRoutes);
-app.user('/notificacions, ' ,notificacionsRoutes)
+app.use('/notificacions',notificacionsRoutes);
+
 
 
 // Iniciar el servidor en el puerto 3002

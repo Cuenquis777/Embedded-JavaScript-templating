@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Recurso</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        .btn-back {
+            background-color: #ccc;
+            color: black;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn-back:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Gestió de Recursos</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Editar Recurso</h2>
+            <form action="/recursos/<%= recurso.id %>" method="POST" class="edit-form">
+                <div class="form-group">
+                    <label for="data">Fecha:</label>
+                    <input type="date" id="data" name="data" value="<%= recurso.data %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Tipo:</label>
+                    <input type="text" id="type" name="type" value="<%= recurso.type %>" placeholder="Introduce el tipo del recurso" required>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" value="<%= recurso.estado %>" placeholder="Introduce el estado del recurso" required>
+                </div>
+                <div class="form-group">
+                    <label for="horaInicio">Hora Inicio:</label>
+                    <input type="time" id="horaInicio" name="horaInicio" value="<%= recurso.horaInicio %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="horaFinal">Hora Final:</label>
+                    <input type="time" id="horaFinal" name="horaFinal" value="<%= recurso.horaFinal %>" required>
+                </div>
+                <button type="submit" class="btn-submit">Guardar</button>
+            </form>
+            <button onclick="location.href='/recursos'" class="btn-back">Volver a la Lista de Recursos</button>
+        </section>
+    </main>
+</body>
+</html>

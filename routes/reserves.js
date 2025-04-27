@@ -35,4 +35,17 @@ router.get("/:id", (req, res) => {
     res.render("reservesDetall", { user, reserva })
 });
 
+// Ruta para mostrar el formulario 
+router.get("/:id/edit", (req, res) => {
+    const data = readReserves();
+    const user = { name: "Marc" };
+    const id = parseInt(req.params.id);
+    const reserva = data.reserves.find((reserva) => reserva.id === id);
+    if (reserva) {
+        res.render("editReserva", { user, reserva });
+    } else {
+        res.status(404).send("Reserva no encontrada");
+    }
+});
+
 export default router;

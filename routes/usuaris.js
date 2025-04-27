@@ -1,8 +1,7 @@
 import express from "express";
 import fs from "fs";
 
-const router = express.Router()
-
+const router = express.Router();
 
 //Leemos el json de products
 const readUsuaris = () => {
@@ -31,6 +30,19 @@ router.get("/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const usuari = data.usuaris.find((usuari) => usuari.id === id);
     res.render("usuarisDetall", { user, usuari })
+});
+
+// Ruta para mostrar el formulario 
+router.get("/:id/edit", (req, res) => {
+    const data = readUsuaris();
+    const user = { name: "Marc" };
+    const id = parseInt(req.params.id);
+    const usuari = data.usuaris.find((usuari) => usuari.id === id);
+    if (usuari) {
+        res.render("editUsuari", { user, usuari });
+    } else {
+        res.status(404).send("Usuari no trobat");
+    }
 });
 
 export default router;

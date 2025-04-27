@@ -15,14 +15,15 @@
     </header>
     <main>
         <section>
-            <h2>Llista de Llibres</h2>
+            <h2>Llista de Recursos</h2>
             <ul class="recurso-list">
                 <% data.recursos.forEach(recurso => { %>
                     <li class="product-item">
-                        <strong><%= recurso.data %></strong>
-                        <span><%= recurso.tipo %></span>
-                        <span><%= recurso.estat %></span>
+                        <strong>Data: <%= recurso.data %></strong>
+                        <span>Tipo: <%= recurso.tipo %></span>
+                        <span>Estado: <%= recurso.estat %></span>
                         <span> <a href="/recursos/<%=recurso.id%>">Detall de recurso</a></span>
+                        <span> <a href="/recursos/<%= recurso.id %>/edit" class="btn-edit">Editar Recurs</a></span>
                     </li>
                 <% }) %>
             </ul>
