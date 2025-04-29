@@ -50,19 +50,19 @@ app.post("/login", async (req, res) => {
             { expiresIn: '1h' }
         );
 
-        res
-            .cookie('access_token', token, {
-                httpOnly: true,
-                secure: process.env.NODE_ENV === 'production',
-                sameSite: 'strict',
-                maxAge: 1000 * 60 * 60 // 1 hora
-            })
-            .send({ user, token });
+        res.cookie('access_token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict',
+            maxAge: 1000 * 60 * 60 // 1 hora
+        });
+
+        // Redirigir al usuario a la página de "home"
+        res.redirect("/home");
     } catch (error) {
         res.status(401).send(error.message);
     }
 });
-
 // Endpoint para registro
 app.post("/register", async (req, res) => {
     const { username, password } = req.body;

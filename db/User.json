@@ -1,5 +1,1 @@
-{
-    "users": [
-        
-    ]
-}
+[{"_id":"13c27f3b-7bb5-46d6-91b8-08ceb4074713","username":"Marc ","password":"$2b$10$XWCx.DJWztEmnEGwgx.8K.c/fW9S4IKHk7Jj/yBZeprXEc6eeX.wG"},{"_id":"2580a3a2-46bc-4a27-86f0-d318499c9560","username":"Marc Cuenca","password":"$2b$10$JfG9vreiU1dClsU/2G6X5OJMeSgK/TyFeinAHZXja3.ETDraun866"},{"_id":"8faf9e26-764b-423f-a247-1b69ed7013b8","username":"elnatass","password":"$2b$10$snrZi8/E1hR6xJa5GMbjROFVfIR9f4CvAZ6uDC4MEjORESA9uF/82"}]
