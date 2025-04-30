@@ -1,6 +1,4 @@
 import express from "express";
-import bodyParser from "body-parser";
-import fs from "fs";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 
@@ -32,47 +30,54 @@ app.use((req, res, next) => {
     next(); // Seguir a la siguiente ruta o middleware
 });
 
-// Página principal
-app.get("/", (req, res) => {
-    const { user } = req.session;
-    res.render("index", user);
+//Endpoints
+app.get('/', (req, res) => {
+    const { user } = req.session
+    res.render('index', user)
 });
 
 // Endpoint para login
-app.post("/login", async (req, res) => {
+app.post('/login', async (req, res) => {
     try {
-        const { username, password } = req.body;
-        const user = await UserRepository.login({ username, password });
-
+        const { username, password } = req.body
+        console.log("llego aqui")
+        const user = await UserRepository.login({ username, password })
+        console.log("llego aqui 1")
         const token = jwt.sign(
             { id: user._id, username: user.username },
             SECRET_JWT_KEY,
-            { expiresIn: '1h' }
-        );
-
-        res.cookie('access_token', token, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
-            maxAge: 1000 * 60 * 60 // 1 hora
-        });
-
-        // Redirigir al usuario a la página de "home"
-        res.redirect("/home");
+            {
+                expiresIn: '1h'
+            })
+        console.log("llego aqui 2")
+        res
+            .cookie('access_token', token, {
+                httpOnly: true, //la cookie solo se puede acceder en el servidor, no podrem fer un document.cookie
+                //secure:true, //la cookie solo funciona en https
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'strict', //la cookie es pot accedir dins del domini
+                maxAge: 1000 * 60 * 60 //la cookie te un temps de validesa d'una hora
+            })
+            .send({ user, token })
     } catch (error) {
-        res.status(401).send(error.message);
+        //401 = no autorització
+        res.status(401).send(error.message)
     }
 });
-// Endpoint para registro
-app.post("/register", async (req, res) => {
-    const { username, password } = req.body;
+
+app.post('/register', async (req, res) => {
+    //aqui el body es el cuerpo de la petición
+    const { username, password } = req.body
+    console.log(req.body)
     try {
         const id = await UserRepository.create({ username, password });
-        res.send({ id });
+        res.send({ id })
     } catch (error) {
-        res.status(400).send(error.message);
+        //No es buena idea mandar el error del repositorio
+        res.status(400).send(error.message)
     }
 });
+
 
 // Endpoint para logout
 app.post("/logout", (req, res) => {
@@ -84,8 +89,12 @@ app.post("/logout", (req, res) => {
 // Endpoint protegido
 app.get("/protected", (req, res) => {
     const { user } = req.session;
-    if (!user) return res.status(403).send('acceso no autorizado');
-    res.render("protected", user);
+    if (!user) return res.status(404).send('acceso no autorizado');
+    res.redirect("/home");
+});
+
+app.get("/home", (req, res) => {
+    res.render("home");
 });
 
 // Rutas adicionales
